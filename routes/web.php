@@ -9,7 +9,7 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 
 Route::get('/', ['uses' => 'Controller@homepage']);
@@ -24,4 +24,5 @@ Route::get('/dashboard', ['as' => 'user.dashboard', 'uses' => 'DashboardControll
 Route::get('/user', ['as' => 'user.index', 'uses' => 'UsersController@index']);
 
 Route::resource('user', 'UsersController');
-Route::resource('intituition', 'InstituitionsController');
+Route::resource('instituition', 'InstituitionsController');
+Route::resource('group', 'GroupsController');
