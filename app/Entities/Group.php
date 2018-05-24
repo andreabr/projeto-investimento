@@ -19,7 +19,7 @@ class Group extends Model implements Transformable
 
     public function owner()
     {
-    	return $this->belongsTo(User::class, 'user_id');
+    	return $this->belongsTo(User::class, 'user_id'); //se coloco a classe com nome diferente da tabela, preciso colocar a chave estrangeira.
     }
 
     public function users()
@@ -31,7 +31,7 @@ class Group extends Model implements Transformable
 
     public function instituition()
     {
-    	return $this->belongsTo(Instituition::class);
+    	return $this->belongsTo(Instituition::class); // aqui não coloco pois o nome da classe é o mesmo da tabela
 	}
 	
 	public function moviments()

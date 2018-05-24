@@ -153,4 +153,9 @@ class GroupsController extends Controller
         $deleted = $this->repository->delete($id);
         return redirect()->route('group.index');
     }
+
+    public function list()
+    {
+        # code...
+    }
 }

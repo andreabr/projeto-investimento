@@ -9,7 +9,6 @@ use App\Validators\GroupValidator;
 use Prettus\Validator\Contracts\ValidatorInterface;
 
 
-
 class GroupService
 {
 	private $repository;
@@ -30,7 +29,7 @@ class GroupService
 
 			return [
 				'success' 	=> true,
-				'messages' 	=> "Grupo cadasrado",
+				'messages' 	=> "Grupo cadastrado",
 				'data' 	  	=> $group,
 			];
 
