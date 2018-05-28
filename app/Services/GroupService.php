@@ -80,7 +80,7 @@ class GroupService
 			$group 		= $this->repository->find($group_id);
 			$user_id 	= $data['user_id'];
 
-			$group->users()->attach($user_id);
+			$group->users()->attach($user_id); //aciona o método, se fosse $group->users, estaria pedindo os usuarios do grupo.
 
 			return [
 				'success' 	=> true,

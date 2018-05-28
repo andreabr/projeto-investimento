@@ -17,6 +17,6 @@
 	@include('templates.formulario.submit', ['input' => 'Relacionar ao Grupo: ' . $group->name ])
 {!! Form::close() !!}
 
-@include('user.list', ['user_list' => $group->users])
+@include('user.list', ['user_list' => $group->users]) <!-- passa todos os usuários -->
 
 @endsection
