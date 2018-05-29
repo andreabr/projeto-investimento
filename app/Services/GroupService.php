@@ -56,7 +56,7 @@ class GroupService
 
 			return [
 				'success' 	=> true,
-				'messages' 	=> "Grupo Atualizar",
+				'messages' 	=> "Grupo atualizado",
 				'data' 	  	=> $group,
 			];
 		}
