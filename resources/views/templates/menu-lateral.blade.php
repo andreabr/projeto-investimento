@@ -18,6 +18,13 @@
 				<h3>Grupos</h3>
 			</a>
 		</li>
+
+		<li>
+			<a href="{{ route('moviment.application')}}">
+				<i class="fa fa-money"></i>
+				<h3>Investir</h3>
+			</a>
+		</li>
 		
 		
 	<ul>
