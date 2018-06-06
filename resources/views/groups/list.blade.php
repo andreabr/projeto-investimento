@@ -3,17 +3,19 @@
 		<tr>
 			<th>#</th>
 			<th>Nome do Grupo</th>
+			<th>Valor</th>
 			<th>Instituição</th>
 			<th>Nome do Responsável</th>
 			<th>Opções</th>
 		</tr>
 	</thead>
 	<tbody>
+		
 		@foreach($group_list as $group)
 		<tr>
 			<td>{{ $group->id }}</td>
 			<td>{{ $group->name }}</td>
-			<td>{{ $group->total_value}}</td>
+			<td>{{ number_format($group->total_value, 2, ',', '.')}}</td>
 			<td>{{ $group->instituition->name }}</td>
 			<td>{{ $group->owner->name }}</td>
 			<td>

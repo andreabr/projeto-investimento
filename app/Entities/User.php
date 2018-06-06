@@ -26,10 +26,10 @@ class User extends Authenticatable
 
 
 	public function groups()
-    {
+	{
         // RELACIONAMENTO N:N
-        return $this->belongsToMany(Group::class, 'user_groups');
-    }
+		return $this->belongsToMany(Group::class, 'user_groups');
+	}
 
 
 	public function setPasswordAttibute($value)
@@ -51,7 +51,7 @@ class User extends Authenticatable
 		return "(" . substr($telefone, 0, 2) . ") " . substr($telefone, 2, 4) . "-" . substr($telefone, -4);
 	}
 
-	
+
 	public function getFormattedBirthAttribute()
 	{
 		$birth = explode('-', $this->attributes['birth']);
@@ -62,9 +62,9 @@ class User extends Authenticatable
 		return $birth;
 	}
 
-	
-
-
-
+	public function moviments()
+	{
+		return $this->hasMany(Moviment::class);
+	}
 
 }
