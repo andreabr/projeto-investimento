@@ -75,15 +75,15 @@ class MovimentsController extends Controller
             'product_id' => $request->get('product_id'),
             'value' => $request->get('value'),
             'type' => 1,
-        
-            ]);
 
-            session()->flash('success', [
-                'success' => true,
-                'messages' => "Sua aplicação de " . $movimento->value . " no produto " . $movimento->product->name . " foi realizada com sucesso"
-            ]);
+        ]);
 
-            return redirect()->route('moviment.application');
+        session()->flash('success', [
+            'success' => true,
+            'messages' => "Sua aplicação de " . $movimento->value . " no produto " . $movimento->product->name . " foi realizada com sucesso"
+        ]);
+
+        return redirect()->route('moviment.application');
     }
 
 

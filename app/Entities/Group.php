@@ -12,14 +12,24 @@ class Group extends Model implements Transformable
 
     protected $fillable = ['name', 'user_id', 'instituition_id'];
 
-	public function getTotalValueAttribute()
-	{
-		return $this->moviments()->applications()->sum('value') - $this->moviments()->outflows()->sum('value');
-	}
+    public function getTotalValueAttribute()
+    {
+        // return $this->moviments()->applications()->sum('value') - $this->moviments()->outflows()->sum('value');
+
+        $total = 0;
+
+        foreach ($this->moviments as $moviment) { //um objeto por vez
+            $total += $moviment->value;
+        }
+
+        return $total;
+
+
+    }
 
     public function owner()
     {
-    	return $this->belongsTo(User::class, 'user_id'); //se coloco a classe com nome diferente da tabela, preciso colocar a chave estrangeira.
+        return $this->belongsTo(User::class, 'user_id'); //se coloco a classe com nome diferente da tabela, preciso colocar a chave estrangeira.
     }
 
     public function users()
@@ -31,13 +41,13 @@ class Group extends Model implements Transformable
 
     public function instituition()
     {
-    	return $this->belongsTo(Instituition::class); // aqui não coloco pois o nome da classe é o mesmo da tabela
-	}
-	
-	public function moviments()
-	{
-		return $this->hasMany(Moviment::class);
-	}
+        return $this->belongsTo(Instituition::class); // aqui não coloco pois o nome da classe é o mesmo da tabela
+    }
+
+    public function moviments()
+    {
+        return $this->hasMany(Moviment::class);
+    }
 
 }
 
